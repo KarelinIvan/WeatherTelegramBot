@@ -26,7 +26,7 @@ def get_weather(message):
     if weather_service.status_code == 200:
         data = json.loads(weather_service.text)
         message_weather = (f"Погода в городе {city.title()}, страна {data["sys"]["country"]}\n"
-                           f"Температура {data["main"]["temp"]}°C\n"
+                           f"Температура {round(data["main"]["temp"])}°C\n"
                            f"Влажность воздуха {data["main"]["humidity"]}%\n"
                            f"Давление {data["main"]["pressure"]}гПа\n"
                            f"Скорость ветра {data["wind"]["speed"]}м/с")
