@@ -29,7 +29,7 @@ def get_weather(message):
                            f"Температура {round(data["main"]["temp"])}°C\n"
                            f"Влажность воздуха {data["main"]["humidity"]}%\n"
                            f"Давление {data["main"]["pressure"]}гПа\n"
-                           f"Скорость ветра {data["wind"]["speed"]}м/с")
+                           f"Скорость ветра {round(data["wind"]["speed"])} м/с")
         weather_bot.reply_to(message, message_weather)
     else:
         message_weather = "Извините, но я не знаю ничего о погоде в этом городе😔"
